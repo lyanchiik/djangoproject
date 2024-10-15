@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'calculator/style.css' %}">
+</head>
+<body>
+    <div>
+    <h1>Калькулятор</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="number" name="num1" placeholder="Перше число" required>
+            <input type="number" name="num2" placeholder="Друге число" required>
+            <select name="operation">
+                <option value="add">Складення</option>
+                <option value="subtract">Віднімання</option>
+                <option value="multiply">Множення</option>
+                <option value="divide">Ділення</option>
+            </select>
+            <button type="submit">Обчислити</button>
+        </form>
+        {% if result is not None %}
+            <h2>Результат: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>

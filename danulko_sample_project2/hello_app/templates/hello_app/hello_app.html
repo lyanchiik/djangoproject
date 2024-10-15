@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Привітання</title>
+    <link rel="stylesheet" href="{% static 'hello_app/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Введіть ваше ім'я</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Ваше ім'я" required>
+            <button type="submit">Привітати</button>
+        </form>
+        {% if greeting %}
+            <h2 class="greeting">{{ greeting }}</h2>
+        {% endif %}
+
+        <button onclick="myFunction()">Check your cookies</button>
+
+    <script>
+            function myFunction() {
+                let cookieString = "";
+                {% for key, value in cookies.items %}
+                cookieString += "{{ key }}: {{ value }}\n";
+                {% endfor %}
+                alert(cookieString);
+            }
+    </script>
+        <p class="check">Це ваш візит номер: {{ visit_count }}</p>
+    </div>
+</body>
+</html>

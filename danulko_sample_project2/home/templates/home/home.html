@@ -1,0 +1,26 @@
+<!-- home/templates/home/home.html -->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна сторінка</title>
+    <link rel="stylesheet" href="{% static 'home/style.css' %}">
+</head>
+<body>
+
+<div class="gg">
+    <div class="nav">
+        <ul>
+            <li><a href="{% url 'hello_world' %}">Hello app</a></li>
+            <li><a href="{% url 'calculator' %}">Calculator app</a></li>
+            <li><a href="">Guess game app</a></li>
+        </ul>
+    </div>
+    <h1>Welcome to the home page!</h1>
+
+</div>
+
+</body>
+</html>
