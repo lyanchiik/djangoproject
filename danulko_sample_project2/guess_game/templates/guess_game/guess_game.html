@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Гра: Вгадай число</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'guess_game/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Гра: Вгадай число</h1>
+        <p>{{ message }}</p>
+        <p>{{ hint }}</p>
+
+        <form method="post" class="guess-form">
+            {% csrf_token %}
+            <input type="number" name="guess" min="0" max="500" required placeholder="Введіть число від 0 до 500">
+            <button type="submit">Відправити</button>
+        </form>
+
+        <form method="post" class="reset-form">
+            {% csrf_token %}
+            <button type="submit" name="reset">Скинути гру</button> <!-- Кнопка для скидання гри -->
+        </form>
+
+        <h2>Ваші спроби:</h2>
+        <ul>
+            {% for attempt in attempts %}
+                <li>{{ attempt }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

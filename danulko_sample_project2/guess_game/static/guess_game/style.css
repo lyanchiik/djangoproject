@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #970747;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #E90074;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #FEF4E8;
+}
+
+p {
+    font-size: 18px;
+    color: #FF8C9E;
+}
+
+.guess-form, .reset-form {
+    margin: 20px 0;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #283E56;
+    border-radius: 5px;
+    width: calc(100% - 24px);
+}
+
+input:focus {
+    border-color: #091057;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: #C21292;
+    color: #8E3E63;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #F05A7E;
+}
+
+h2 {
+    color: #FF8C9E;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    color: #125B9A;
+}

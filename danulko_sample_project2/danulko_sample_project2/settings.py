@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'hello_app',
     'home',
     'calculator_app',
+    'guess_game'
 ]
 
 MIDDLEWARE = [
